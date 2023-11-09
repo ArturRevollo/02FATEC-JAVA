@@ -83,15 +83,23 @@ public class Carro {
         return 0;
     }
 
-    public double adicionarGasolina(double gasolina) {
-        if (this.gasolinaTanque < this.quantidadeTanque) {
-            this.gasolinaTanque += gasolina;
-            return this.gasolinaTanque;
-        } else {
-            System.out.println("O tanque de gasolina está totalmente cheio!");
+    public double adicionarGasolina(double gasolina, float valor) {
+
+        if (gasolina <= this.quantidadeTanque && gasolina > 0) {
+            if (this.gasolinaTanque < this.quantidadeTanque) {
+                this.gasolinaTanque += gasolina;
+            System.out.println("você gastou " + (valor * gasolina) + " reais");
+                return this.gasolinaTanque;
+            } else {
+                System.out.println("O Tanque está totalmente cheio!");
+                return this.gasolinaTanque;
+            }
+        }else{
+            System.out.println("A Quantidade de gasolina é insuficiente!");
             return this.gasolinaTanque;
         }
     }
+
 
     public double removerGasolina() {
         this.gasolinaTanque -= 10;

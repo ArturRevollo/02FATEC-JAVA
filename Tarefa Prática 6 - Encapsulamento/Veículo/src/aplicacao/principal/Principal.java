@@ -7,6 +7,8 @@ public class Principal {
     public static void main(String[] args) throws Exception {
         Scanner scanner = new Scanner(System.in);
 
+        float valorGasolina = 5.65f;
+
         System.out.println("Bem-vindo ao Sistema Virtual de Automóveis!");
 
         System.out.print("Qual a marca do veículo que você deseja?   ");
@@ -36,7 +38,7 @@ public class Principal {
         if (abastecer.equals("s")) {
             System.out.print("Quantos litros de gasolina você deseja adicionar?   ");
             double gasolina = scanner.nextDouble();
-            car.adicionarGasolina(gasolina);
+            car.adicionarGasolina(gasolina, valorGasolina);
 
             System.out.print("Você deseja ligar o Carro? (s / n)   ");
             String ligar = scanner.next();
